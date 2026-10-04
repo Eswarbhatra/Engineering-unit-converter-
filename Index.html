@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Engineering Unit Converter</title>
+</head>
+<body>
+    <h1>Engineering Unit Converter</h1>
+
+    <input type="number" id="value" placeholder="Enter value">
+
+    <select id="unit">
+        <option value="cm-mm">cm to mm</option>
+        <option value="m-cm">m to cm</option>
+        <option value="kg-g">kg to g</option>
+    </select>
+
+    <button onclick="convert()">Convert</button>
+
+    <h2 id="result"></h2>
+
+    <script>
+        function convert() {
+            let value = Number(document.getElementById("value").value);
+            let unit = document.getElementById("unit").value;
+            let result;
+
+            if (unit == "cm-mm") {
+                result = value * 10 + " mm";
+            } 
+            else if (unit == "m-cm") {
+                result = value * 100 + " cm";
+            } 
+            else if (unit == "kg-g") {
+                result = value * 1000 + " g";
+            }
+
+            document.getElementById("result").innerText = result;
+        }
+    </script>
+</body>
+</html>
